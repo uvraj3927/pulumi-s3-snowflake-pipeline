@@ -1,0 +1,11 @@
+name: basic_pro
+description: basic pro with snowflake and aws
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python

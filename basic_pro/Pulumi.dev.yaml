@@ -1,0 +1,10 @@
+config:
+  aws:region: us-east-1
+  snowflake:user: Alpha
+  snowflake:password:
+    secure: AAABADd/8O4uff6w7YeOL8+LByyHpZ3TAlbX5EFwAm7jcR3AFO05nLcZWHFyIuXGp9rYYdY5hAw=
+  snowflake:role: ACCOUNTADMIN
+  snowflake:warehouse: COMPUTE_WH
+  snowflake:organizationName: NNZFNNY
+  snowflake:accountName: EC02596
+  snowflake:previewFeaturesEnabled: '["snowflake_table_resource"]'
