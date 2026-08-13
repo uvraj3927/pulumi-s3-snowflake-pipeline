@@ -1,92 +1,66 @@
- # AWS Python S3 Bucket Pulumi Template
 
- A minimal Pulumi template for provisioning a single AWS S3 bucket using Python.
+# S3 to Snowflake Data Pipeline using Pulumi
 
- ## Overview
+A beginner Infrastructure as Code project using Python and Pulumi
+to create an AWS S3 to Snowflake data ingestion pipeline.
 
- This template provisions an S3 bucket (`pulumi_aws.s3.BucketV2`) in your AWS account and exports its ID as an output. It’s an ideal starting point when:
-  - You want to learn Pulumi with AWS in Python.
-  - You need a barebones S3 bucket deployment to build upon.
-  - You prefer a minimal template without extra dependencies.
+## Architecture
 
- ## Prerequisites
+S3 Bucket
+    ↓
+Snowflake Storage Integration
+    ↓
+External Stage
+    ↓
+Snowpipe
+    ↓
+INCOMING_EVENTS table
 
- - An AWS account with permissions to create S3 buckets.
- - AWS credentials configured in your environment (for example via AWS CLI or environment variables).
- - Python 3.6 or later installed.
- - Pulumi CLI already installed and logged in.
+## Technologies
 
- ## Getting Started
+- Python
+- Pulumi
+- AWS S3
+- AWS IAM
+- Snowflake
+- Snowpipe
 
- 1. Generate a new project from this template:
-    ```bash
-    pulumi new aws-python
-    ```
- 2. Follow the prompts to set your project name and AWS region (default: `us-east-1`).
- 3. Change into your project directory:
-    ```bash
-    cd <project-name>
-    ```
- 4. Preview the planned changes:
-    ```bash
-    pulumi preview
-    ```
- 5. Deploy the stack:
-    ```bash
-    pulumi up
-    ```
- 6. Tear down when finished:
-    ```bash
-    pulumi destroy
-    ```
+## What this project creates
 
- ## Project Layout
+### AWS
+- S3 bucket
+- S3 public access block
+- IAM policy
+- IAM role
 
- After running `pulumi new`, your directory will look like:
- ```
- ├── __main__.py         # Entry point of the Pulumi program
- ├── Pulumi.yaml         # Project metadata and template configuration
- ├── requirements.txt    # Python dependencies
- └── Pulumi.<stack>.yaml # Stack-specific configuration (e.g., Pulumi.dev.yaml)
- ```
+### Snowflake
+- Database
+- Schema
+- Table
+- Storage integration
+- JSON file format
+- External S3 stage
+- Snowpipe
 
- ## Configuration
+## Data Flow
 
- This template defines the following config value:
+JSON files are uploaded to the S3 bucket.
 
- - `aws:region` (string)
-   The AWS region to deploy resources into.
-   Default: `us-east-1`
+Snowpipe automatically loads the JSON data into the
+Snowflake INCOMING_EVENTS table.
 
- View or update configuration with:
- ```bash
- pulumi config get aws:region
- pulumi config set aws:region us-west-2
- ```
+The table contains:
 
- ## Outputs
+- EVENT_ID
+- PAYLOAD
+- INGESTED_AT
 
- Once deployed, the stack exports:
+## Current Status
 
- - `bucket_name` — the ID of the created S3 bucket.
+Version 1 - Beginner project
 
- Retrieve outputs with:
- ```bash
- pulumi stack output bucket_name
- ```
+The current goal is to understand how Pulumi can create
+and connect AWS and Snowflake infrastructure.
 
- ## Next Steps
-
- - Customize `__main__.py` to add or configure additional resources.
- - Explore the Pulumi AWS SDK: https://www.pulumi.com/registry/packages/aws/
- - Break your infrastructure into modules for better organization.
- - Integrate into CI/CD pipelines for automated deployments.
-
- ## Help and Community
-
- If you have questions or need assistance:
- - Pulumi Documentation: https://www.pulumi.com/docs/
- - Community Slack: https://slack.pulumi.com/
- - GitHub Issues: https://github.com/pulumi/pulumi/issues
-
- Contributions and feedback are always welcome!
+Future versions will improve the data transformation
+and pipeline architecture.

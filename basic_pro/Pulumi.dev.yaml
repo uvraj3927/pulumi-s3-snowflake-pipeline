@@ -7,4 +7,4 @@ config:
   snowflake:warehouse: COMPUTE_WH
   snowflake:organizationName: NNZFNNY
   snowflake:accountName: EC02596
-  snowflake:previewFeaturesEnabled: '["snowflake_table_resource", "snowflake_storage_integration_resource"]'
+  snowflake:previewFeaturesEnabled: '["snowflake_pipe_resource"]'
