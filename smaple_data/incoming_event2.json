@@ -1,0 +1,5 @@
+{"EVENT_ID": "evt_101", "PAYLOAD": {"user": "Alice", "action": "login", "status": "success"}}
+{"EVENT_ID": "evt_102", "PAYLOAD": {"user": "Bob", "action": "purchase", "amount": 150.0}}
+{"EVENT_ID": "evt_103", "PAYLOAD": {"user": "Charlie", "action": "logout", "session_duration_sec": 420}}
+{"EVENT_ID": "evt_104", "PAYLOAD": {"user": "Alice", "action": "search", "query": "snowflake snowpipe tutorial"}}
+{"EVENT_ID": "evt_105", "PAYLOAD": {"user": "Dave", "action": "add_item", "item_id": "SKU_9912"}}

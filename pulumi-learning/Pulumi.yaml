@@ -1,0 +1,10 @@
+name: projectdemo
+description: a simple project to know how to setup s3bucket in aws cloud
+runtime:
+  name: python
+  options:
+    toolchain: uv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python

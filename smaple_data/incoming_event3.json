@@ -1,0 +1,43 @@
+  {
+    "EVENT_ID": "evt_021",
+    "PAYLOAD": {
+      "user_id": "usr_121",
+      "action": "user_login",
+      "platform": "web"
+    }
+  },
+  {
+    "EVENT_ID": "evt_022",
+    "PAYLOAD": {
+      "user_id": "usr_122",
+      "action": "add_to_cart",
+      "item_id": "item_99",
+      "quantity": 2
+    }
+  },
+  {
+    "EVENT_ID": "evt_023",
+    "PAYLOAD": {
+      "user_id": "usr_121",
+      "action": "checkout_started",
+      "amount": 49.99,
+      "currency": "USD"
+    }
+  },
+  {
+    "EVENT_ID": "evt_024",
+    "PAYLOAD": {
+      "user_id": "usr_123",
+      "action": "page_view",
+      "page": "/home"
+    }
+  },
+  {
+    "EVENT_ID": "evt_025",
+    "PAYLOAD": {
+      "user_id": "usr_122",
+      "action": "payment_completed",
+      "status": "success",
+      "transaction_id": "tx_98765"
+    }
+  }
